@@ -208,3 +208,7 @@ See [DEMONSTRATION.md](DEMONSTRATION.md) for a safe walkthrough. Do not publish 
 ## Project status and licence
 
 This repository is prepared as an NESFIC demonstration project. No project licence has been selected and no `LICENSE` file has been added.
+
+## Vercel public demonstration preparation
+
+The isolated public build and deployment repair are documented in [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md). Use `npm run build:public` with `BHUSUTRA_PUBLIC_DEMO=1`; the original local workflows remain the default with that variable unset. Public interactions are browser-only simulations and never load local account records.

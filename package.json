@@ -23,7 +23,9 @@
     "test:maps": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/map-rendering.test.mjs",
     "test:map-browser": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/test-map-browser.mjs",
     "test:buyer-switch": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/buyer-switch.test.mjs",
-    "test:admin-monitoring": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/admin-monitoring.test.mjs"
+    "test:admin-monitoring": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/admin-monitoring.test.mjs",
+    "build:public": "node scripts/build-public-demo.mjs",
+    "test:public-demo": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/public-demo.test.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "5.2.8",
@@ -45,5 +47,8 @@
     "eslint-config-next": "^16.2.0",
     "tailwindcss": "^4.2.0",
     "typescript": "^5.9.0"
+  },
+  "engines": {
+    "node": "24.x"
   }
 }

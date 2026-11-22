@@ -1,6 +1,14 @@
 import type { NextConfig } from "next";
 
+if (process.env.VERCEL && process.env.BHUSUTRA_PUBLIC_DEMO !== "1") {
+  throw new Error("Vercel requires BHUSUTRA_PUBLIC_DEMO=1. Local database workflows must not be deployed.");
+}
+
 const nextConfig: NextConfig = {
+  // Separate route entry points: local server actions are absent from public builds.
+  pageExtensions: process.env.BHUSUTRA_PUBLIC_DEMO === "1" ? ["demo.tsx"] : ["tsx", "ts", "jsx", "js"],
+  typescript: { tsconfigPath: process.env.BHUSUTRA_PUBLIC_DEMO === "1" ? "tsconfig.public.json" : "tsconfig.json" },
+  outputFileTracingExcludes: { "/*": ["./.bhusutra-demo/**", "./.env*", "./**/*.sqlite*", "./**/*.session-key*", "./output/**", "./tmp/**"] },
   experimental: { serverActions: { bodySizeLimit: "256kb" } },
   async headers() {
     return [{

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "buildCommand": "npm run build:public",
+  "installCommand": "npm ci",
+  "env": { "BHUSUTRA_PUBLIC_DEMO": "1" },
+  "build": { "env": { "BHUSUTRA_PUBLIC_DEMO": "1" } }
+}
