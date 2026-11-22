@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280">
+  <defs>
+    <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M22 0H0v22" fill="none" stroke="#c0d6c2" stroke-opacity=".5"/>
+    </pattern>
+    <pattern id="rows" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(24)">
+      <path d="M0 2h8" stroke="#97b697" stroke-opacity=".40"/>
+    </pattern>
+  </defs>
+  <path fill="#e8f1e5" d="M0 0h560v280H0z"/>
+  <path fill="url(#grid)" d="M0 0h560v280H0z"/>
+  <path fill="none" stroke="#d5e4cf" stroke-width="1.5" d="M-20 83Q65 20 151 52T344 31 570 45M-21 68Q55 6 154 38T347 16 574 31M-20 51Q56-8 155 23T348 1 574 16M-20 36Q61-21 157 8T350-13 580 2M227 301q47-49 152-43t191-28m-357 54q53-53 158-46t204-30m-371 61q52-53 160-48t214-32m-387 65q63-54 162-48t231-36"/>
+  <path fill="none" stroke="#b3d6d0" stroke-width="25" d="M-20 186C75 97 125 108 181 160s94 97 174 49 109-90 225-56"/>
+  <path fill="none" stroke="#cce5df" stroke-width="10" d="M-20 187C75 98 125 109 181 161s94 96 174 48 109-90 225-55"/>
+  <g stroke="#77a383" stroke-width="1.5" stroke-linejoin="round">
+    <path fill="#c8ddbd" d="m53 82 64-31 46 43-57 20-46-5z"/>
+    <path fill="#d6e7cd" d="m117 51 78-17 35 44-67 16z"/>
+    <path fill="#c1d9b9" d="m163 94 67-16 17 55-50 19z"/>
+    <path fill="#d4e4cc" d="m230 78 57-26 39 19 4 66-83-4z"/>
+    <path fill="#c2daba" d="m247 133 83 4-10 49-55 33-33-23z"/>
+    <path fill="#cee1c8" d="m287 52 36-30 65 16-10 43-52-10z"/>
+    <path fill="#e0cb8c" stroke="#a18029" stroke-width="2.5" d="m326 71 52 10 33 36-36 32-45-12z"/>
+    <path fill="#bdd7b8" d="m378 81 10-43 84 9-12 42-49 28z"/>
+    <path fill="#d4e5cb" d="m460 89 12-42 53 22 13 51-63-2z"/>
+    <path fill="#c9ddbf" d="m26 207 62-30 39 21-19 44-60 14z"/>
+    <path fill="#d3e3ca" d="m127 198 54-4 41 40-58 35-56-27z"/>
+  </g>
+  <path fill="url(#rows)" d="m117 51 78-17 35 44-67 16zM247 133l83 4-10 49-55 33-33-23zM378 81l10-43 84 9-12 42-49 28zM26 207l62-30 39 21-19 44-60 14z"/>
+  <path fill="none" stroke="#678774" stroke-width="1.4" stroke-dasharray="4 4" d="M46 25q57 47 119 33t137 36q86 39 222-69"/>
+</svg>

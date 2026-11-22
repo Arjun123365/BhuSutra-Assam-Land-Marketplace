@@ -1,0 +1,38 @@
+.admin-banner {
+  padding: .7rem .85rem;
+  border: 1px solid #d6bd75;
+  border-radius: .55rem;
+  background: #faf3dd;
+  color: #594211;
+  font-size: .81rem;
+}
+
+.admin-banner p { font-size: .75rem; }
+.admin-access { max-width: 42rem; margin-top: .8rem; }
+.admin-nav { align-items: center; }
+.admin-nav form { margin-left: auto; }
+.admin-counts { display: grid; gap: .65rem; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); }
+.admin-counts dt { color: #325443; font-size: .76rem; font-weight: 650; }
+.admin-counts dt a:hover { text-decoration: underline; }
+.admin-counts dd { color: #14532d; font-size: 1.45rem; font-weight: 780; line-height: 1.2; }
+.admin-counts .seller-card { padding: .65rem .8rem; }
+.admin-table-scroll { overflow-x: auto; margin-top: .65rem; }
+.admin-table { width: 100%; min-width: 53rem; border-collapse: collapse; font-size: .77rem; text-align: left; }
+.admin-table :is(td, th) { border-bottom: 1px solid #dce7de; padding: .5rem .4rem; vertical-align: top; }
+.admin-table th { background: #eef5ee; color: #234a33; }
+.admin-table td a { color: #14532d; font-weight: 700; text-decoration: underline; }
+.admin-id { overflow-wrap: anywhere; font-size: .72rem; }
+.admin-pagination { margin-top: .7rem; align-items: center; font-size: .78rem; }
+.admin-review, .admin-review-stack { display: grid; gap: .75rem; min-width: 0; align-items: start; }
+.admin-checklist, .admin-audit { margin-top: .4rem; font-size: .78rem; }
+.admin-checklist li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .2rem .55rem; padding: .35rem 0; border-bottom: 1px solid #dce7de; }
+.admin-checklist strong { color: #325443; }
+.admin-audit li { border-top: 1px solid #dce7de; padding: .45rem 0; }
+.admin-audit p, .admin-note-content { white-space: pre-wrap; overflow-wrap: anywhere; }
+.admin-description-title { margin-top: .6rem; }
+
+@media (min-width: 53rem) {
+  .admin-filters { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .admin-review { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+  .admin-audit-card { grid-column: 1 / -1; }
+}

@@ -1,0 +1,378 @@
+.records-page-intro .records-back-link { margin-bottom: .4rem; }
+.records-page-content { padding-block: 1rem 1.5rem; }
+
+.verification-toolbar,
+.verification-status-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: .8rem;
+  margin-bottom: .75rem;
+  padding: .75rem .85rem;
+}
+
+.verification-toolbar form { display: grid; gap: .3rem; min-width: 0; }
+.verification-toolbar label, .verification-status-summary h2 {
+  color: var(--color-forest);
+  font-size: .86rem;
+  font-weight: 720;
+}
+
+.verification-controls { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; }
+.verification-controls select, .verification-controls button, .verification-controls a { min-height: 2.5rem; }
+
+.verification-controls select {
+  max-width: 100%;
+  min-width: 0;
+  padding: .35rem .5rem;
+  border: 1px solid #a2b6a7;
+  border-radius: .4rem;
+  color: #223a2a;
+  background: #fff;
+  font-size: .82rem;
+}
+
+.verification-primary {
+  padding: .45rem .7rem;
+  border-radius: .4rem;
+  background: var(--color-forest);
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.verification-primary:hover { background: #1d6344; }
+.verification-status-summary { align-items: center; border-color: #cddfd0; background: #f6faf6; }
+.verification-status-summary p { margin-top: .2rem; color: #354d3e; font-size: .82rem; }
+.buyer-verification { color: #354d3e; font-size: .8rem; line-height: 1.5; }
+.buyer-verification-counts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .4rem;
+  padding: 0 .85rem .5rem;
+}
+
+.buyer-verification-counts > div { padding: .35rem .5rem; border: 1px solid var(--line); border-radius: .4rem; background: #fff; }
+.buyer-verification-counts dd { color: var(--color-forest); font-size: 1.03rem; font-weight: 750; }
+.buyer-verification-note { padding: 0 .85rem .55rem; }
+.buyer-verification-section { padding: .6rem .85rem; border-top: 1px solid var(--line); }
+.buyer-verification-section h3, .buyer-check-list h4 { color: #173b26; font-weight: 720; }
+.buyer-verification-section > p { margin: .3rem 0; }
+.buyer-verification-section .verification-steps { margin: .4rem 0 0; }
+.buyer-verification-details p { padding-bottom: .65rem; }
+.buyer-check-list { display: grid; gap: .45rem; margin-top: .5rem; }
+.buyer-check-list > li {
+  min-width: 0;
+  padding: .5rem;
+  border: 1px solid var(--line);
+  border-radius: .4rem;
+  background: #fff;
+}
+
+.buyer-check-statuses { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .28rem; }
+.buyer-check-statuses .records-status { white-space: normal; }
+.records-status[data-buyer-status="Completed"] { background: #e2f0e7; color: #14532d; }
+.records-status[data-buyer-status="Not Started"], .records-status[data-buyer-status="In Progress"] { background: #f9ecd0; color: #784607; }
+.buyer-check-statuses .records-status[data-status="not-connected"] { background: #eceeec; color: #474e48; }
+.buyer-check-form { margin-top: .4rem; }
+.buyer-check-form button { cursor: pointer; }
+.buyer-check-form :disabled { opacity: .65; cursor: wait; }
+.buyer-check-error { color: #982a21; }
+.buyer-check-history { display: grid; gap: .4rem; padding-bottom: .65rem; }
+.buyer-check-history li { display: grid; padding: .25rem .45rem; border-left: 2px solid #c7ddcc; }
+
+.records-back-link,
+.open-parcel-record {
+  display: inline-flex;
+  align-items: center;
+  gap: .32rem;
+  width: fit-content;
+  min-height: 2rem;
+  color: var(--color-forest);
+  font-size: .76rem;
+  font-weight: 700;
+}
+
+.records-back-link:hover { text-decoration: underline; }
+
+.open-parcel-record {
+  padding: .25rem .55rem;
+  border: 1px solid #c7ddcc;
+  border-radius: .4rem;
+  background: var(--color-sage);
+}
+
+.open-parcel-record:hover { background: #deeee1; }
+
+.parcel-record-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .4rem .65rem;
+  margin-top: .45rem;
+}
+
+#demo-map { scroll-margin-top: .65rem; }
+
+.parcel-verification,
+.record-sections {
+  display: grid;
+  min-width: 0;
+  align-items: start;
+  gap: .75rem;
+}
+
+.records-card {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: .7rem;
+  background: #fff;
+}
+
+.records-card-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .35rem .55rem;
+  padding: .68rem .85rem .55rem;
+}
+
+.records-card-heading :is(h2, h3),
+.parcel-context h2 {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  color: #173b26;
+  font-size: .94rem;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.records-card-heading svg,
+.records-title-notice svg,
+.verification-steps li svg {
+  flex: none;
+  color: var(--color-forest);
+}
+
+.records-status {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: .16rem .4rem;
+  border-radius: .28rem;
+  background: #edf1ed;
+  color: #43584a;
+  font-size: .68rem;
+  font-weight: 710;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.records-status[data-status="demo"] { background: #e7f2e9; color: #22553a; }
+.records-status[data-status="seller-declared"] { background: #f4efdf; color: #66511b; }
+.records-status[data-status="needs-review"] { background: #f9ecd0; color: #784607; }
+.records-status[data-status="government-verified"] { background: #e2f0e7; color: #14532d; }
+
+.record-field-grid,
+.due-diligence-facts {
+  display: grid;
+  gap: .55rem .85rem;
+  padding: .15rem .85rem .8rem;
+}
+
+.record-field-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.due-diligence-facts { gap: .45rem; }
+
+.record-field-grid dt,
+.government-record-body dt,
+.due-diligence-facts dt {
+  margin-bottom: .12rem;
+  color: #52665a;
+  font-size: .74rem;
+  line-height: 1.4;
+}
+
+.record-field-grid dd,
+.government-record-body dd {
+  color: #223a2a;
+  font-size: .82rem;
+  font-weight: 640;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.due-diligence {
+  border-color: #cddfd0;
+  background: #f6faf6;
+}
+
+.due-diligence-facts dd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .16rem .35rem;
+  color: #263f30;
+  font-size: .77rem;
+  line-height: 1.45;
+}
+
+.verification-steps,
+.records-title-notice {
+  margin-inline: .85rem;
+  border-top: 1px solid var(--line);
+}
+
+.verification-steps summary,
+:is(.government-record, .government-records-fold) > summary {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  min-height: 2.65rem;
+  color: #21422d;
+  font-size: .8rem;
+  font-weight: 690;
+  line-height: 1.4;
+  list-style: none;
+  cursor: pointer;
+}
+
+.verification-steps summary { justify-content: space-between; }
+
+.verification-steps summary::-webkit-details-marker,
+:is(.government-record, .government-records-fold) > summary::-webkit-details-marker { display: none; }
+
+.verification-steps summary:focus-visible,
+:is(.government-record, .government-records-fold) > summary:focus-visible {
+  outline: 2px solid #287245;
+  outline-offset: -2px;
+}
+
+.verification-steps[open] summary svg,
+:is(.government-record, .government-records-fold)[open] > summary svg { transform: rotate(180deg); }
+
+.verification-steps ul {
+  display: grid;
+  gap: .42rem;
+  padding-bottom: .65rem;
+  color: #40594a;
+  font-size: .75rem;
+  line-height: 1.5;
+}
+
+.verification-steps li,
+.records-title-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: .38rem;
+}
+
+.records-title-notice {
+  padding-block: .58rem .7rem;
+  color: #3b5544;
+  font-size: .74rem;
+  line-height: 1.45;
+}
+
+.government-record-list { border-top: 1px solid var(--line); }
+.government-record + .government-record { border-top: 1px solid var(--line); }
+
+:is(.government-record, .government-records-fold) > summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: .32rem;
+  padding: .4rem .85rem;
+}
+
+:is(.government-record, .government-records-fold) > summary:hover { background: #f3f8f4; }
+:is(.government-record, .government-records-fold)[open] > summary { background: #f6faf6; }
+
+.government-record-body {
+  padding: .58rem .85rem .7rem;
+  color: #455e4d;
+  font-size: .77rem;
+}
+
+.government-record-body dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .4rem .7rem;
+}
+
+.government-record-body dd { font-size: .76rem; }
+.government-record-body p { margin-top: .4rem; line-height: 1.5; }
+
+.parcel-context { overflow: hidden; }
+.parcel-context h2 { padding: .68rem .85rem; }
+
+.parcel-context svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 10rem;
+  border-block: 1px solid var(--line);
+  background: #eef5ee;
+}
+
+.parcel-context figcaption {
+  display: flex;
+  align-items: center;
+  gap: .38rem;
+  padding: .52rem .85rem;
+  color: #52665a;
+  font-size: .73rem;
+}
+
+.parcel-context figcaption span {
+  width: .68rem;
+  height: .68rem;
+  border: 2px solid #997717;
+  border-radius: .18rem;
+  background: #c3ddc8;
+}
+
+.parcel-verification[data-embedded="true"],
+.parcel-verification[data-embedded="true"] .record-sections { gap: 0; }
+
+.parcel-verification[data-embedded="true"] .records-card {
+  border: 0;
+  border-radius: 0;
+}
+
+.parcel-verification[data-embedded="true"] :is(.record-sections, .records-card + .records-card) {
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 56rem) {
+  .parcel-verification[data-embedded="false"] {
+    grid-template-columns: minmax(0, 1fr) minmax(19rem, 23rem);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "records summary"
+      "records context";
+  }
+
+  .parcel-verification[data-embedded="false"] .record-sections { grid-area: records; }
+  .parcel-verification[data-embedded="false"] .due-diligence { grid-area: summary; }
+  .parcel-verification[data-embedded="false"] .parcel-context { grid-area: context; }
+
+  .parcel-verification[data-embedded="false"] .record-field-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .parcel-verification:has(> .buyer-verification[data-compact="false"]) {
+    grid-template-areas: "summary records" "summary records";
+  }
+
+  .parcel-verification:has(> .buyer-verification[data-compact="false"]) .record-field-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .buyer-verification[data-compact="false"] .buyer-check-list,
+  .buyer-verification[data-compact="false"] .buyer-verification-counts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

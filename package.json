@@ -1,0 +1,49 @@
+{
+  "name": "bhusutra",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "node scripts/patch-rsc-performance.mjs",
+    "predev": "node scripts/patch-rsc-performance.mjs",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test:phase32": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/phase32.test.mjs",
+    "test:phase33": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/phase33.test.mjs",
+    "test:phase41": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/phase41.test.mjs",
+    "test:phase42": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/phase42.test.mjs",
+    "test:phase51": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/phase51.test.mjs",
+    "test:phase52": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/phase52.test.mjs",
+    "test:phase61": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/phase61.test.mjs",
+    "test:phase62": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/phase62.test.mjs",
+    "test:runtime-performance": "node --test tests/runtime-performance.test.mjs",
+    "test:regression": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test --test-skip-pattern=\"seller withdrawal\" tests/phase32.test.mjs tests/phase33.test.mjs tests/phase41.test.mjs tests/phase42.test.mjs tests/phase51.test.mjs tests/phase52.test.mjs tests/phase61.test.mjs tests/phase62.test.mjs tests/runtime-performance.test.mjs tests/map-rendering.test.mjs tests/buyer-switch.test.mjs tests/admin-monitoring.test.mjs",
+    "test:maps": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/map-rendering.test.mjs",
+    "test:map-browser": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/test-map-browser.mjs",
+    "test:buyer-switch": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/buyer-switch.test.mjs",
+    "test:admin-monitoring": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/admin-monitoring.test.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "5.2.8",
+    "@fontsource-variable/noto-sans-bengali": "^5.2.0",
+    "leaflet": "1.9.4",
+    "lucide-react": "0.577.0",
+    "next": "16.4.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-leaflet": "5.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.0",
+    "@types/leaflet": "1.9.22",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.2.0",
+    "tailwindcss": "^4.2.0",
+    "typescript": "^5.9.0"
+  }
+}

@@ -1,0 +1,54 @@
+.listing-enquiry-link {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: .65rem;
+  color: #14532d;
+  font-size: .77rem;
+  font-weight: 730;
+  text-decoration: underline;
+  text-underline-offset: .18em;
+}
+.parcel-enquiry-link { margin: 0 .85rem .75rem; }
+.buyer-dashboard-grid, .enquiry-list { display: grid; gap: .75rem; align-items: start; }
+.enquiry-section { margin-top: .85rem; scroll-margin-top: 1rem; }
+.buyer-dashboard-grid .enquiry-section { margin-top: 0; }
+.enquiry-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .5rem;
+  margin-block: .65rem;
+}
+.enquiry-summary > div, .enquiry-item {
+  padding: .65rem;
+  border: 1px solid var(--seller-border);
+  border-radius: .5rem;
+}
+.enquiry-summary > div { background: var(--seller-soft); }
+.enquiry-summary dt { font-size: .74rem; color: #3b5545; }
+.enquiry-summary dd { font-size: 1.14rem; font-weight: 750; color: #14532d; }
+.enquiry-list { margin-top: .65rem; }
+.enquiry-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: .35rem;
+}
+.enquiry-heading a { color: #14532d; text-decoration: underline; }
+.enquiry-item p, .enquiry-history { font-size: .77rem; line-height: 1.5; color: #445c4a; }
+.enquiry-item p { margin-top: .24rem; }
+.enquiry-item .enquiry-message { white-space: pre-wrap; overflow-wrap: anywhere; margin-top: .55rem; }
+.enquiry-item .seller-status-group { margin-top: .55rem; }
+.enquiry-history { padding-bottom: .4rem; }
+.enquiry-action { margin-top: .55rem; }
+.enquiry-item .seller-status[data-status="Viewed"] { background: #edf2f8; color: #38506b; }
+.enquiry-item .seller-status[data-status="Responded"] { background: #e1f1e5; color: #215337; }
+@media (min-width: 46rem) {
+  .enquiry-summary { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (min-width: 60rem) {
+  .buyer-dashboard-grid { grid-template-columns: minmax(12rem, 1fr) minmax(0, 2.4fr); }
+}
