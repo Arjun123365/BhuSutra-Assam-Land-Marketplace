@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/noto-sans-bengali";
 import "leaflet/dist/leaflet.css";
-import "./globals.css";
+import type { Metadata } from "next";
+import "./about.css";
+import "./assistance.css";
 import "./enquiries.css";
+import "./globals.css";
 import "./parcel-map.css";
 import "./parcel-verification.css";
-import "./assistance.css";
 import "./presentation.css";
 
 export const metadata: Metadata = {

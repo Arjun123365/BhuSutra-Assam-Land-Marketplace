@@ -76,3 +76,26 @@ Added: `.vercelignore`, `vercel.json`, `tsconfig.public.json`, `VERCEL_DEPLOYMEN
 The public snapshot is not synchronized to the local SQLite database. Existing private sellers, buyers, enquiries, approvals and histories remain only on the original laptop. Public simulation is deliberately simplified and cannot substitute for role authorization, durable audit history, legal review or production authentication. There are no Government integrations, payments or ownership transfers. Refresh resets all simulated activity. Publication of this branch does not prove the live website works. Production must be tested after redeployment; no manual Vercel deployment is performed by the preparation scripts.
 
 BhuSutra is an NESFIC demonstration prototype using synthetic data. It is not an official Government land-record portal and does not certify legal title or transaction eligibility.
+
+## Shared workspace UI and About page
+
+The public demo now uses the original local registration, listing wizard, buyer/seller/admin dashboard views, due-diligence view, parcel/verification page content, transaction detail/progress views and administrator review/coordination views. Local wrappers retain their signed sessions, database access, existing server actions and authorisation. Public adapters use fictional presentation profiles and browser-memory records only. The public and local applications both provide `/about` using the same component.
+
+| Area | Public demonstration behaviour |
+| --- | --- |
+| Home and Explore Land | Shared original layout, six labelled snapshot cards, all 17 geometries, working filters and offline maps |
+| Buyer and seller registration | Original field layouts and validation; creates/updates only a fictional tab-local persona |
+| Buyer dashboard | Shared metrics, profile card, due-diligence progress, enquiries, responses and assistance list |
+| Seller dashboard | Shared metrics, listing status groups, audit, enquiry and assistance sections |
+| Listing submission | Shared three-step wizard; save/resume draft, consent, duplicate reservation and simulated review |
+| Parcel and verification | Shared record sections, source badges and eight buyer status controls; official checks stay unavailable |
+| Transaction assistance | Original participant actions, preparation gates, progress tracker, checklist and history; tab-local only |
+| Administrator | Matching command-centre charts, review queue/table, review checklist/map, coordination monitoring and follow-ups; no privileged server writes |
+| Notifications | Mark browser-generated notifications read; no external messages |
+| About | Shared vision, mission, modules, workflows, geographic scope, technology, benefits, prototype status, roadmap, NESFIC context, GitHub link and disclaimers |
+
+Intentional differences: public values use new fictional fixtures rather than exporting local profiles or history; public tools require JavaScript and reset on refresh; local authentication/unlock/switching tools remain unavailable publicly; downloaded public reports are watermarked plain-text summaries rather than the local persisted-record reports. Homepage snapshot counts do not change with browser activity; workspace totals reflect the current tab. No Government verification, financial transaction or ownership transfer is performed.
+
+Validation scripts: `npm run test:regression` includes 62 isolated tests; `npm run test:workspaces` covers six browser-adapter policy tests. `scripts/test-full-workspace-parity.mjs` builds an isolated public production copy, exercises browser journeys, and captures desktop/mobile comparisons in `output/full-workspace-parity/`. Protected local screens use a new disposable synthetic reference store and fresh test keys, never copies of original accounts, sessions or keys. Public local screens can also be compared directly with localhost:3000. The output folder, reference databases, keys and screenshots are ignored and must not be committed.
+
+Final workspace validation: ESLint and local TypeScript passed; the isolated public production build and its TypeScript check passed. All 62 regression tests, 12 public-mode unit/build checks, 140 production browser assertions and 339 screenshot/structure assertions passed. The comparison covers 18 page pairs at 1280px and 390px, with additional public responsive checks at 1440px, 1280px, 390px and 320px. A labelled local comparison gallery is generated at `output/full-workspace-parity/index.html` and remains uncommitted. The original SQLite SHA-256 is unchanged, P-15 remains Approved, and the public artifact contains zero server actions with no private database/key/environment file traces.
