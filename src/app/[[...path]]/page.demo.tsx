@@ -1,16 +1,15 @@
 import { notFound } from "next/navigation";
 import { ExploreMarketplace } from "../../components/explore-marketplace";
-import { HomeHero } from "../../components/home-hero";
-import { Marketplace } from "../../components/marketplace";
-import { PublicWorkspace } from "../../components/public-demo-workspace";
-import { publicListings, publicParcels } from "../../lib/public-demo";
+import { HomepageContent } from "../../components/homepage-content";
+import { PublicDemoNotice, PublicWorkspace } from "../../components/public-demo-workspace";
+import { publicListings, publicParcels, publicHomepageSnapshot } from "../../lib/public-demo";
 
 export default async function PublicPage({ params, searchParams }: { params: Promise<{ path?: string[] }>; searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const path = (await params).path ?? [];
   const query = await searchParams;
   const route = "/" + path.join("/");
   if (path.some(part => ["switch", "access", "report"].includes(part))) notFound();
-  if (route === "/") return <><HomeHero /><section className="shell public-summary"><strong>17 synthetic parcels</strong><strong>3 districts</strong><strong>4 approved public demo listings</strong><span>Curated presentation snapshot · not live database totals</span></section><Marketplace listings={publicListings} previewParcels={publicParcels.filter(p => p.circle === "Teok")} /></>;
+  if (route === "/") return <HomepageContent listings={publicListings} previewParcels={publicParcels.filter(p => p.circle === "Teok")} counts={publicHomepageSnapshot} snapshot notice={<PublicDemoNotice compact />} />;
   if (route === "/explore") return <ExploreMarketplace initialParcel={publicParcels.find(p => p.id === query.parcel)} marketplaceParcels={publicParcels} />;
   const record = route.match(/^\/explore\/parcels\/(P-\d{2})$/);
   if (record) {

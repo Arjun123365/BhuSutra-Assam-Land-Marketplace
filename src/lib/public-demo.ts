@@ -5,17 +5,19 @@ const published = new Map([
   ["P-01", { price: 1850000, title: "Farmland near Jorhat" }],
   ["P-02", { price: 2800000, title: "Residential plot in Kamrup" }],
   ["P-03", { price: 4200000, title: "Roadside parcel in Dibrugarh" }],
-  ["P-15", { price: 250000, title: "Agricultural parcel in Boko" }],
+  ["P-15", { price: 250000, title: "Agricultural parcel in Kamrup" }],
 ]);
 export const publicParcels: DemoParcel[] = demoParcels.map(parcel => {
   const listing = published.get(parcel.id);
-  return { ...parcel, sellerListing: listing ? { ...listing, voluntaryConsent: true, seeded: true, listingId: "public-" + parcel.id } : undefined };
+  return { ...parcel, sellerListing: listing ? { ...listing, voluntaryConsent: true, seeded: parcel.id !== "P-15", listingId: "public-" + parcel.id } : undefined };
 });
 export const publicListings = publicParcels.flatMap(parcel => parcel.sellerListing?.voluntaryConsent ? [{
   id: parcel.id, district: parcel.district, circle: parcel.circle, category: parcel.category,
   area: parcel.area, areaUnit: parcel.areaUnit, ...parcel.sellerListing,
-  listingId: "public-" + parcel.id, seeded: true,
+  listingId: "public-" + parcel.id, seeded: parcel.sellerListing.seeded,
 }] : []);
+// Curated aggregate presentation fixtures; never read from or synchronized to SQLite.
+export const publicHomepageSnapshot = { parcels: publicParcels.length, approved: publicListings.length, sellers: 3, buyers: 2, enquiries: 2, transactions: 1 };
 export const publicNotice = "BhuSutra is an NESFIC demonstration prototype using synthetic data. It is not an official Government land-record portal and does not certify legal title or transaction eligibility.";
 export const demoStages = ["Interest Expressed", "Seller Contact Requested", "Seller Response Pending", "Preliminary Discussion", "Document Verification Pending", "Legal Due Diligence Pending", "Ready for Independent Professional Review", "Closed"];
 export type PublicDemoState = { enquiries: string[]; responses: string[]; transactions: Record<string, number>; checks: Record<string, string[]>; events: string[]; draft: boolean; submitted: boolean; approved: boolean };

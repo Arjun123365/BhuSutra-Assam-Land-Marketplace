@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { createContext, useContext, useMemo, useSyncExternalStore } from "react";
 import { SiteHeader } from "./site-header";
+import { HomepageFooter } from "./homepage-content";
 import { ParcelVerification } from "./parcel-verification";
 import { ParcelMap } from "./parcel-map-loader";
 import { getGovernmentRecordSections, disconnectedGovernmentRecords } from "../lib/parcel-records";
@@ -19,13 +20,30 @@ const Simulation = createContext<{ state: PublicDemoState; act: (action: PublicA
 
 // State stays in this browser tab. No cookies, identity data, server actions or fetches.
 export function PublicDemoFrame({ children }: { children: React.ReactNode }) {
+  const homepage = usePathname() === "/";
   const serialized = useSyncExternalStore(subscribe, snapshot, serverSnapshot);
   const state = useMemo(() => serialized ? JSON.parse(serialized) as PublicDemoState : emptyPublicState, [serialized]);
   function act(action: PublicAction) {
     memory = JSON.stringify(updatePublicDemo(state, action, new Date().toISOString()));
     listeners.forEach(listener => listener());
   }
-  return <Simulation.Provider value={{ state, act }}><a href="#main-content" className="skip-link">Skip to content</a><SiteHeader /><aside className="public-banner"><div className="shell"><strong>PUBLIC DEMO · Browser-only simulation</strong><p>{publicNotice}</p><p>Nothing is saved to a server. No real accounts, contact exchange, approvals, payments or transactions. This tab’s simulated activity resets on refresh.</p></div></aside><nav className="shell public-workspace-nav" aria-label="Public demonstration workspaces"><Link href="/seller/dashboard">Seller preview</Link><Link href="/buyer/dashboard">Buyer preview</Link><Link href="/admin/dashboard">Administrator simulation</Link><Link href="/buyer/transactions">Transaction assistance</Link><Link href="/buyer/notifications">Activity & notifications</Link></nav><main id="main-content">{children}</main><footer className="site-footer" id="about"><div className="shell"><h2>BhuSutra · ভূসূত্ৰ</h2><p>Connecting Land. Building Trust.</p><p>{publicNotice}</p><button type="button" onClick={() => { memory = ""; listeners.forEach(listener => listener()); }}>Reset this tab’s simulation</button></div></footer></Simulation.Provider>;
+  const navigation = <nav className="shell public-workspace-nav" aria-label="Public demonstration workspaces"><Link href="/seller/dashboard">Seller preview</Link><Link href="/buyer/dashboard">Buyer preview</Link><Link href="/admin/dashboard">Administrator simulation</Link><Link href="/buyer/transactions">Transaction assistance</Link><Link href="/buyer/notifications">Activity & notifications</Link></nav>;
+  return <Simulation.Provider value={{ state, act }}><div id="home">
+    <a href="#main-content" className="skip-link">Skip to content</a><SiteHeader />
+    {!homepage && <><PublicDemoNotice />{navigation}</>}
+    <main id="main-content" tabIndex={-1}>{children}</main>
+    <HomepageFooter>
+      <div className="shell public-footer-tools"><p>{publicNotice}</p><p>Nothing is saved to a server. This tab’s simulated activity resets on refresh.</p><button type="button" onClick={() => { memory = ""; listeners.forEach(listener => listener()); }}>Reset this tab’s simulation</button></div>
+      {homepage && navigation}
+    </HomepageFooter>
+  </div></Simulation.Provider>;
+}
+
+export function PublicDemoNotice({ compact = false }: { compact?: boolean }) {
+  return <aside className={compact ? "public-banner public-home-banner" : "public-banner"} aria-label="Public demonstration limitations"><div className="shell">
+    <strong>PUBLIC DEMO · Browser-only simulation</strong>
+    {compact ? <details><summary>Demo limitations</summary><p>{publicNotice}</p><p>No saved transactions, real accounts, contact exchange, payments or Government integration. Refresh resets this tab’s activity.</p></details> : <><p>{publicNotice}</p><p>Nothing is saved to a server. No real accounts, contact exchange, approvals, payments or transactions. This tab’s simulated activity resets on refresh.</p></>}
+  </div></aside>;
 }
 
 export function PublicWorkspace({ section, parcelId }: { section: string; parcelId: string }) {
