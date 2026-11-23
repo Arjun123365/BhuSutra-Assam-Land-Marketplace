@@ -1,11 +1,11 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { Menu,X } from "lucide-react";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useRef,useState } from "react";
 import { Brand } from "./brand";
 
-export function SiteHeader({ activePage = "home" }: { activePage?: "home" | "explore" | "seller" | "admin" | "buyer" | "verify" }) {
+export function SiteHeader({ activePage = "home" }: { activePage?: "home" | "explore" | "seller" | "admin" | "buyer" | "verify" | "about" }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
 
@@ -36,7 +36,7 @@ export function SiteHeader({ activePage = "home" }: { activePage?: "home" | "exp
             <li><Link href="/seller/list-property" aria-current={activePage === "seller" ? "page" : undefined} onClick={() => setMenuOpen(false)}>List Property</Link></li>
             <li><Link href="/buyer/dashboard" aria-current={activePage === "buyer" ? "page" : undefined} onClick={() => setMenuOpen(false)}>Buyer Dashboard</Link></li>
             <li><Link href="/verify-records" aria-current={activePage === "verify" ? "page" : undefined} onClick={() => setMenuOpen(false)}>Verify Records</Link></li>
-            <li><Link href="/#about" onClick={() => setMenuOpen(false)}>About</Link></li>
+            <li><Link href="/about" aria-current={activePage === "about" ? "page" : undefined} onClick={() => setMenuOpen(false)}>About</Link></li>
           </ul>
         </nav>
       </div>

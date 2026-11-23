@@ -19,13 +19,14 @@
     "test:phase61": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/phase61.test.mjs",
     "test:phase62": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/phase62.test.mjs",
     "test:runtime-performance": "node --test tests/runtime-performance.test.mjs",
-    "test:regression": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test --test-skip-pattern=\"seller withdrawal\" tests/phase32.test.mjs tests/phase33.test.mjs tests/phase41.test.mjs tests/phase42.test.mjs tests/phase51.test.mjs tests/phase52.test.mjs tests/phase61.test.mjs tests/phase62.test.mjs tests/runtime-performance.test.mjs tests/map-rendering.test.mjs tests/buyer-switch.test.mjs tests/admin-monitoring.test.mjs",
+    "test:regression": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test --test-skip-pattern=\"seller withdrawal\" tests/phase32.test.mjs tests/phase33.test.mjs tests/phase41.test.mjs tests/phase42.test.mjs tests/phase51.test.mjs tests/phase52.test.mjs tests/phase61.test.mjs tests/phase62.test.mjs tests/runtime-performance.test.mjs tests/map-rendering.test.mjs tests/buyer-switch.test.mjs tests/admin-monitoring.test.mjs tests/browser-workspaces.test.mjs",
     "test:maps": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/map-rendering.test.mjs",
     "test:map-browser": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/test-map-browser.mjs",
     "test:buyer-switch": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/buyer-switch.test.mjs",
     "test:admin-monitoring": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/admin-monitoring.test.mjs",
     "build:public": "node scripts/build-public-demo.mjs",
-    "test:public-demo": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/public-demo.test.mjs"
+    "test:public-demo": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/public-demo.test.mjs",
+    "test:workspaces": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/browser-workspaces.test.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "5.2.8",
